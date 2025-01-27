@@ -1,0 +1,5 @@
+Export the Walland PDF into MS Excel
+
+- in Excel, delete the cell that captures the footnote and page number
+
+- in Excel, in Sheet1, delete the column name because it is created in R

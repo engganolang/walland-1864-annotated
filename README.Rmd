@@ -1,0 +1,21 @@
+---
+output: github_document
+title: "Annotated Walland's (1864) list"
+author: "Daniel Krauße"
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Overview
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+PDF of the annotated Walland's (1864) list and the plain text format of the table. 
