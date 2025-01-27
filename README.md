@@ -1,4 +1,5 @@
-Annotated Walland’s (1864) list
+Annotated Old Enggano Word List derived from Walland’s “Het Eiland
+Engano” from 1864
 ================
 Daniel Krauße
 
@@ -9,5 +10,6 @@ Daniel Krauße
 <!-- badges: start -->
 <!-- badges: end -->
 
-PDF of the annotated Walland’s (1864) list and the plain text format of
-the table.
+PDF of the annotated [Walland’s (1864)
+list](https://enggano.ling-phil.ox.ac.uk/static/previous.html#walland)
+and the plain text format of the table.
