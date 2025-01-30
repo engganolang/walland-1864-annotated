@@ -1,3 +1,5 @@
+# G. Rajeg, 2025 (University of Oxford/Udayana University)
+
 library(tidyverse)
 library(readxl)
 library(googledrive)
@@ -35,7 +37,63 @@ walland1 <- walland |>
   mutate(Dutch_Orig = str_replace_all(Dutch_Orig, "\\-\\s+", "-"),
          English_gloss = str_replace_all(English_gloss, "\\-\\s+", "-"),
          High_Language_HL = str_replace_all(High_Language_HL, "\\-\\s+", "-"),
-         Low_Language_LL = str_replace_all(Low_Language_LL, "\\-\\s+", "-"))
+         Low_Language_LL = str_replace_all(Low_Language_LL, "\\-\\s+", "-")) |> 
+  mutate(ID = 1:nrow(walland1)) |> 
+  select(ID, everything())
+
+# Split the remark by carriage return and new line markers
+walland2 <- walland1 |> 
+  mutate(Remarks_Split = str_split(Remarks, "\\r\\n")) |> 
+  unnest_longer(Remarks_Split) |> 
+  mutate(Remarks_Category = "Rm_Others",
+         Remarks_Category = if_else(str_detect(Remarks_Split, "^HL\\:"),
+                                    "Rm_HL",
+                                    Remarks_Category),
+         Remarks_Category = if_else(str_detect(Remarks_Split, "^LL\\:"),
+                                    "Rm_LL",
+                                    Remarks_Category),
+         Remarks_Category = if_else(str_detect(Remarks_Split, "^OE\\s"),
+                                    "Rm_Sound_Changes",
+                                    Remarks_Category),
+         Remarks_Category = if_else(str_detect(Remarks_Split, "^ME\\:"),
+                                    "Rm_Contemporary_Enggano_Translation",
+                                    Remarks_Category),
+         Remarks_Category = if_else(str_detect(Remarks_Split, "^K.+hler"),
+                                    "Rm_Kahler",
+                                    Remarks_Category),
+         Remarks_Category = factor(Remarks_Category,
+                                   levels = c("Rm_HL",
+                                              "Rm_LL",
+                                              "Rm_Sound_Changes",
+                                              "Rm_Contemporary_Enggano_Translation",
+                                              "Rm_Kahler",
+                                              "Rm_Others")))
+
+## multiple remarks of the same Remarks_Category are joined into one line
+### then pivoted into wider table with Remarks_Category values as column names
+walland3 <- walland2 |> 
+  group_by(Dutch_Orig, English_gloss, High_Language_HL, Contemporary_Equiv_HL, 
+           Low_Language_LL, Contemporary_Equiv_LL, Remarks, pagenum, 
+           Remarks_Category) |> 
+  mutate(Remarks_Joined = str_c(Remarks_Split, collapse = "__")) |> 
+  ungroup() |> 
+  select(-Remarks_Split,
+         -Remarks) |> 
+  distinct() |> 
+  pivot_wider(names_from = "Remarks_Category", 
+              values_from = "Remarks_Joined", 
+              values_fill = "") |> 
+  mutate(across(matches("^Rm_"), ~str_replace_all(., "__", " ; "))) |> 
+  relocate(Rm_LL, .after = Rm_HL) |> 
+  relocate(Rm_Sound_Changes, .after = Rm_LL) |> 
+  relocate(Rm_Others, .after = Rm_Kahler)
+
+## multiple remarks of the same Remarks_Category have their own rows (long-table format)
+walland4 <- walland2 |> 
+  relocate(pagenum, .after = Remarks_Category) |> 
+  relocate(Remarks, .after = Remarks_Category) |> 
+  rename(Remarks_Orig = Remarks) |> 
+  arrange(ID, Remarks_Category)
 
 # googledrive::drive_create(name = "Walland-1864-annotated",
 #                           path = "https://drive.google.com/drive/u/0/folders/1GEcnGtmDGHdJO2AH8wWqXTd_1aaNcE8W",
@@ -45,7 +103,12 @@ walland1 <- walland |>
 #   With MIME type:
 #   • application/vnd.google-apps.spreadsheet
 
-googlesheets4::sheet_write(walland1, ss = "1VCUJNGysXkmZ31eOTruHjfFYrp0_o5qCvOe3Ule67A4", sheet = "main")
-write_csv(walland1, "data-output/walland-1864-annotated.csv")
-write_tsv(walland1, "data-output/walland-1864-annotated.tsv")
-write_rds(walland1, "data-output/walland-1864-annotated.rds")
+googlesheets4::sheet_write(walland3, ss = "1VCUJNGysXkmZ31eOTruHjfFYrp0_o5qCvOe3Ule67A4", sheet = "rm_wide")
+googlesheets4::sheet_write(walland4, ss = "1VCUJNGysXkmZ31eOTruHjfFYrp0_o5qCvOe3Ule67A4", sheet = "rm_long")
+write_csv(walland3, "data-output/walland-1864-annotated.csv")
+write_tsv(walland3, "data-output/walland-1864-annotated.tsv")
+write_rds(walland3, "data-output/walland-1864-annotated.rds")
+
+write_csv(walland4, "data-output/walland-1864-annotated-remark-long.csv")
+write_tsv(walland4, "data-output/walland-1864-annotated-remark-long.tsv")
+write_rds(walland4, "data-output/walland-1864-annotated-remark-long.rds")

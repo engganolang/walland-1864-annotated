@@ -3,3 +3,11 @@ Export the Walland PDF into MS Excel
 - in Excel, delete the cell that captures the footnote and page number
 
 - in Excel, in Sheet1, delete the column name because it is created in R
+
+- in Excel, adjust the new-line items of the remark
+
+In R
+
+- for the remarks, str_split by "\\r\\n", then transfer each remark type to its respective column
+
+- OR, create a column to indicate the category of the remarks presented in the Remarks_split column so that users can filter the Remarks based on the category

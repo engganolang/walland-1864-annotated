@@ -3,6 +3,8 @@ Engano” from 1864
 ================
 Daniel Krauße
 <a itemprop="sameAs" content="https://orcid.org/0000-0002-9340-6960" href="https://orcid.org/0000-0002-9340-6960" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>
+& Gede Primahadi Wijaya Rajeg
+<a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
@@ -50,9 +52,13 @@ their translations in Contemporary Enggano. See further information
 about this Old Enggano word list
 [here](https://enggano.ling-phil.ox.ac.uk/static/previous.html#walland).
 
+The data table captures the organisation of the remark notes as wide
+table and as long table (i.e., that suffixed with `remark-long` in its
+file name).
+
 ### Contributors
 
-| Name                         | GitHub user | Description                                     | Role   |
-|------------------------------|-------------|-------------------------------------------------|--------|
-| Krauße, Daniel               |             | Data Collector, Data Curator, Annotator         | Author |
-| Rajeg, Gede Primahadi Wijaya | @gederajeg  | Data Curator, Spreadsheet Conversion, Archiving | Other  |
+| Name                         | GitHub user | Description                                           | Role   |
+|------------------------------|-------------|-------------------------------------------------------|--------|
+| Krauße, Daniel               |             | Data Collector, Data Curator, Annotator               | Author |
+| Rajeg, Gede Primahadi Wijaya | @gederajeg  | Spreadsheet Conversion, Data Table Curator, Archiving | Author |
