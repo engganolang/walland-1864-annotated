@@ -3,7 +3,7 @@
 
 cff-version: 1.2.0
 title: >-
-  Annotated Old Enggano Word List derived from Walland’s
+  Annotated and Searchable Old Enggano Word List derived from Walland’s
   “Het Eiland Engano” from 1864
 message: >-
   If you use this dataset, please cite it using the metadata
@@ -15,11 +15,16 @@ authors:
     email: krausse.daniel@gmail.com
     orcid: 'https://orcid.org/0000-0002-9340-6960'
     affiliation: Centre National de la Recherche Scientifique
+  - given-names: Gede Primahadi Wijaya
+    family-names: Rajeg
+    email: primahadi_wijaya@unud.ac.id
+    orcid: 'https://orcid.org/0000-0002-2047-8621'
+    affiliation: University of Oxford
 url: 'https://github.com/engganolang/walland-1864-annotated'
 abstract: >-
   A repository of PDF of the annotated Old Enggano word list
   derived from Walland’s (1864). The table in the PDF is
-  then extracted into .csv, .tsv, and .rds data formats. The
+  then extracted into portable and searchable formats (.csv and .tsv). The
   annotated data is a table comparing the high/low Enggano
   forms to their translations in Contemporary Enggano. See
   further information about this Old Enggano word list at

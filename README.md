@@ -60,5 +60,5 @@ file name).
 
 | Name                         | GitHub user | Description                                           | Role   |
 |------------------------------|-------------|-------------------------------------------------------|--------|
-| Krauße, Daniel               |             | Data Collector, Data Curator, Annotator               | Author |
+| Krauße, Daniel               |             | Data Collector, Data Curator, Annotator, Analyses     | Author |
 | Rajeg, Gede Primahadi Wijaya | @gederajeg  | Spreadsheet Conversion, Data Table Curator, Archiving | Author |
