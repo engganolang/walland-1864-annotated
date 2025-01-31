@@ -52,13 +52,15 @@ their translations in Contemporary Enggano. See further information
 about this Old Enggano word list
 [here](https://enggano.ling-phil.ox.ac.uk/static/previous.html#walland).
 
-The data table captures the organisation of the remark notes as wide
-table and as long table (i.e., that suffixed with `remark-long` in its
-file name).
+The data table captures the organisation of the remark notes as a [wide
+table](https://github.com/engganolang/walland-1864-annotated/blob/main/data-output/walland-1864-annotated.csv)
+and as a [long
+table](https://github.com/engganolang/walland-1864-annotated/blob/main/data-output/walland-1864-annotated-remark-long.csv)
+(i.e., that suffixed with `remark-long` in its file name).
 
 ### Contributors
 
-| Name                         | GitHub user | Description                                           | Role   |
-|------------------------------|-------------|-------------------------------------------------------|--------|
-| Krauße, Daniel               |             | Data Collector, Data Curator, Annotator, Analyses     | Author |
-| Rajeg, Gede Primahadi Wijaya | @gederajeg  | Spreadsheet Conversion, Data Table Curator, Archiving | Author |
+| Name                         | GitHub user | Description                                                       | Role   |
+|------------------------------|-------------|-------------------------------------------------------------------|--------|
+| Krauße, Daniel               |             | Data Collector, Lexical Data Curator, Annotator, Analyses/Remarks | Author |
+| Rajeg, Gede Primahadi Wijaya | @gederajeg  | Spreadsheet Conversion, Data Table Curator, Coding, Archiving     | Author |

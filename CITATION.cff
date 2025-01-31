@@ -3,7 +3,7 @@
 
 cff-version: 1.2.0
 title: >-
-  Annotated and Searchable Old Enggano Word List derived from Walland’s
+  Annotated Old Enggano Word List derived from Walland’s
   “Het Eiland Engano” from 1864
 message: >-
   If you use this dataset, please cite it using the metadata
@@ -36,8 +36,13 @@ keywords:
   - Lexical Database
   - Bank Data Leksikal
   - Language Documentation
-  - bahasa Enggano
+  - Bahasa Enggano
   - Lexical Resources
   - Legacy Material
+  - Old Enggano
+  - Old Enggano Word List
+  - Austronesian
+  - Barrier-Island Languages
+  - Digital Humanities
 license: CC-BY-NC-SA-4.0
 date-released: '2024-11-12'
